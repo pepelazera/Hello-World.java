@@ -1,5 +1,4 @@
 package aulasjavapoo;
-
 public class ObjetoAula05 {
 
     // Atributos
@@ -32,28 +31,38 @@ public class ObjetoAula05 {
     public void fecharConta() {
         if (saldoConta > 0) {
             System.out.println("Conta com dinheiro");
+            System.out.println("Valor na conta: " + getSaldoConta());
         }
         else if (saldoConta < 0) {
             System.out.println("Conta em débito");
         }
         else {
+            System.out.println("Conta fechada com sucesso!");
             setStatusConta(false);
         }
     }
 
     public void depositar(double v) {
-        if (statusConta == true) {
+        if (!getStatusConta()) {
             setSaldoConta(getSaldoConta() + v);
         }
         else {
             System.out.println("Impossível depositar");
         }
+
+        if (!getStatusConta() && v > 0) {
+            System.out.println("Valor depositado com sucesso!");
+        }
+        else {
+            System.out.println("Impossível depositar esse valor");
+        }
     }
 
     public void sacar(double v) {
-        if (statusConta == true) {
-            if (saldoConta > v) {
+        if (!getStatusConta()) {
+            if (saldoConta > 0) {
                 setSaldoConta(getSaldoConta() - v);
+                System.out.printf("Valor %.2f sacado.", v);
             }
             else {
                 System.out.println("Saldo insuficiente");
@@ -71,7 +80,8 @@ public class ObjetoAula05 {
         else if (tipConta.equals("CPP")) {
             v = 20;
         }
-        if(statusConta == true) {
+
+        if(!getStatusConta()) {
             if (saldoConta > v) {
                 setSaldoConta(getSaldoConta() - v);
             }
