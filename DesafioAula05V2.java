@@ -68,6 +68,11 @@ public class DesafioAula05V2 {
 
         System.out.println();
         p1.estadoAtual();
+        p1.pagarMensal();
+
+        System.out.println();
+
         p2.estadoAtual();
+        p2.pagarMensal();
     }
 }

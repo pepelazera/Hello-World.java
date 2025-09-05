@@ -12,6 +12,7 @@ public class ContaBanco {
 
     // Métodos personalizados
     public void estadoAtual() {
+        System.out.println();
         System.out.println("-------------------------------------");
         System.out.println("Conta: "+ this.getNumConta());
         System.out.println("Dono: "+this.getDono());
