@@ -4,21 +4,26 @@ import java.util.Locale;
 public class DesafioAula07 {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
-        Lutadores l0 = new Lutadores("Pretty boy", "França", 31, 1.75f, 68.8f, 11, 2, 1);
+        Lutador l[] = new Lutador[6];
 
-        Lutadores l1 = new Lutadores("Putscript", "Brasil", 29, 1.68f, 57.8f, 14, 2, 3);
+        l[0] = new Lutador("Asta", "Alemanha", 18, 1.88f, 100f, 10, 0, 2);
 
-        Lutadores l2 = new Lutadores("Xvidamansa", "EUA", 35, 1.65f, 80.9f, 12, 2, 1);
+        l[1] = new Lutador("Ichigo", "Suécia", 29, 1.68f, 57.8f, 14, 2, 3);
 
-        Lutadores l3 = new Lutadores("Dead code", "Austrália", 28, 1.93f, 81.6f, 13, 0, 2);
+        l[2] = new Lutador("Zoro", "Japão", 27, 1.80f, 82.9f, 12, 2, 1);
 
-        Lutadores l4 = new Lutadores("Nintown", "Nepal", 32, 1.88f, 101.2f, 12, 4, 4);
+        l[3] = new Lutador("Kakashi", "Japão", 35, 1.88f, 81.6f, 13, 0, 2);
 
-        Lutadores l5 = new Lutadores("Nepharius", "Alemanha", 23, 1.99f, 115.4f, 15, 0, 1);
+        l[4] = new Lutador("Shinra", "EUA", 18, 1.72f, 70f, 8, 3, 3);
 
-        l0.apresentar();
-        l2.status();
-        l1.ganharLuta();
-        l0.empatarLuta();
+        l[5] = new Lutador("Luffy", "Brasil", 19, 1.74f, 68.2f, 15, 0, 0);
+
+        l[0].apresentar();
+        l[0].status();
+
+        System.out.println();
+
+        l[5].apresentar();
+        l[5].status();
     }
 }
