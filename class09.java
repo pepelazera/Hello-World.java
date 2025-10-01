@@ -14,5 +14,9 @@ public class class09 {
         o2.status();
 
         o2.leafThroughPage();
+        o2.nextPage();
+        o2.goBackPage();
+
+        o2.status();
     }
 }

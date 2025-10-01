@@ -41,12 +41,16 @@ public class ObjectClass09V2Book implements Publication {
         if (reply.equals("yes") || reply.equals("y")) {
             this.setOpen(true);
             System.out.println("The book is open.");
+
+            closeBook();
         }
 
 
         else if (reply.equals("no") || reply.equals("n") || reply.equals("nn")) {
             this.setOpen(false);
             System.out.println("The book is close.");
+
+            openBook();
         }
 
         System.out.println();
@@ -114,13 +118,15 @@ public class ObjectClass09V2Book implements Publication {
     // Interface Methods
     @Override
     public void openBook() {
-        System.out.print("Do you want to open the book ? ");
-        String r = sc.nextLine().toLowerCase();
+        System.out.print("\nDo you want to open the book ? ");
+        String r = sc.next().toLowerCase();
 
-        if (r.equals("yes") || r.equals("ys") || r.equals("y")) {
+        if (r.equals("yes") || r.equals("ys")
+                || r.equals("yy") || r.equals("y")) {
             this.setOpen(true);
             System.out.println("The book is open now.");
         }
+
 
         else if (r.equals("no") || r.equals("nn") || r.equals("n")) {
             this.setOpen(false);
@@ -131,13 +137,15 @@ public class ObjectClass09V2Book implements Publication {
 
     @Override
     public void closeBook() {
-        System.out.println("Do you want to close the book ? ");
-        String r = sc.nextLine().toLowerCase();
+        System.out.print("\nDo you want to close the book ? ");
+        String r = sc.next().toLowerCase();
 
-        if (r.equals("yes") || r.equals("ys") || r.equals("y")) {
+        if (r.equals("yes") || r.equals("ys")
+                || r.equals("yy") || r.equals("y")) {
             this.setOpen(false);
             System.out.println("The book is close now.");
         }
+
 
         else if (r.equals("no") || r.equals("nn") || r.equals("n")) {
             this.setOpen(true);
@@ -148,28 +156,103 @@ public class ObjectClass09V2Book implements Publication {
 
     @Override
     public void leafThroughPage() {
-        System.out.print("Do you want to turn the page ? ");
-        String r = sc.next().toLowerCase();
 
-        System.out.print("How many pages do you want to turn ? ");
-        int p = sc.nextInt();
+        while (true) {
+            System.out.print("\nDo you want to leaf through one page ? ");
+            String r = sc.next().toLowerCase();
 
-        if (!this.getOpen()) {
-            System.out.println("I can't turn the page because the book is closed.");
-        }
-        else if (r.equals("yes") || r.equals("ys") || r.equals("y")) {
-            this.setCurrentPages(getCurrentPages() + p);
-            System.out.println("Now, the current pages are: "+this.getCurrentPages());
+
+            if (r.equals("yes") || r.equals("ys")
+                    || r.equals("y") || r.equals("yy")) {
+
+                System.out.print("\nWhich page do you want to leaf through ? ");
+                int p = sc.nextInt();
+
+                System.out.printf("Opening on page %s ", p);
+                System.out.println();
+                System.out.println("Page that you leafed through: " + p);
+            }
+
+            else if (r.equals("no") || r.equals("nn") || r.equals("n")) {
+                System.out.println("You didn't leaf through any page.");
+                break;
+            }
+
+            else {
+                System.out.print("\nERROR: Please, put a valid option: ");
+                sc.nextLine();
+            }
         }
 
-        else if (r.equals("no") || r.equals("nn") || r.equals("n")) {
-            System.out.println("THe current pages don't change: "+this.getCurrentPages());
-        }
     }
 
 
     @Override
-    public void advancePage() {
+    public void nextPage() {
+
+        while (true) {
+            System.out.print("\nDo you want to advance the page ? ");
+            String r = sc.next().toLowerCase();
+
+
+            if (r.equals("yes") || r.equals("ys")
+                    || r.equals("y") || r.equals("yy")) {
+
+                System.out.print("\nHow many pages do you want to advance ? ");
+                int p = sc.nextInt();
+
+                if ((this.getCurrentPages() + p) > this.getTotPages()) {
+                    System.out.println("ERROR: You can't advance more than "+this.getTotPages()+" pages.");
+                }
+
+                else {
+                    this.setCurrentPages(getCurrentPages() + p);
+                    System.out.println("Now, you is on page "+this.getCurrentPages());
+                }
+
+                System.out.println("Pages that you advanced: " + p);
+
+                while (true) {
+                    System.out.print("\nDo you want to advance more pages ? ");
+                    String r2 = sc.next().toLowerCase();
+
+                    if (r2.equals("yes") || r2.equals("yy")
+                            || r2.equals("y") || r2.equals("ys")) {
+                        System.out.print("\nHow many pages do you want to advance now ? ");
+                        int p2 = sc.nextInt();
+                        this.setCurrentPages(getCurrentPages() + p2);
+
+                        System.out.println("Pages that you advanced: "+p2);
+                        System.out.println("Now, you is on page "+this.getCurrentPages());
+                    }
+
+                    else if (r2.equals("no") || r2.equals("nn") || r2.equals("n")) {
+                        System.out.println("You didn't advanced more pages.");
+                        break;
+                    }
+
+                    else {
+                        System.out.print("ERROR: Please, write 'yes' or 'no' to continue: ");
+                    }
+                }
+
+                break;
+            }
+
+
+            else if (r.equals("no") || r.equals("nn") || r.equals("n")) {
+                System.out.println("You didn't advanced any page.");
+                System.out.printf("\nNumbers of page: %s", this.getCurrentPages());
+                break;
+            }
+
+
+            else {
+                System.out.print("\nERROR: Please, put a valid option: ");
+            }
+        }
+
+        System.out.println("Page you is: "+this.getCurrentPages());
 
     }
 
@@ -177,6 +260,58 @@ public class ObjectClass09V2Book implements Publication {
     @Override
     public void goBackPage() {
 
+        while (true) {
+            System.out.print("\nDo you want to go back the page ? ");
+            String r = sc.next().toLowerCase();
+
+            if (r.equals("yes") || r.equals("ys")
+                    || r.equals("y") || r.equals("yy")) {
+                System.out.print("\nHow many pages do you want to go back ? ");
+                int p = sc.nextInt();
+                this.setCurrentPages(getCurrentPages() - p);
+
+                System.out.println("Pages that you go back: "+p);
+                System.out.println("Now, you is on page "+this.getCurrentPages());
+
+                while (true) {
+                    System.out.print("\nDo you want to go back more pages ? ");
+                    String r2 = sc.next().toLowerCase();
+
+                    if (r2.equals("yes") || r2.equals("ys")
+                          || r2.equals("yy") || r2.equals("y")) {
+
+                        System.out.print("\nHow many pages do you want to go back now ? ");
+                        int p2 = sc.nextInt();
+                        this.setCurrentPages(getCurrentPages() - p2);
+
+                        System.out.println("Pages that you go back: "+p2);
+                        System.out.println("Now, you is on page "+this.getCurrentPages());
+                    }
+                    else if (r2.equals("no") || r2.equals("nn") || r2.equals("n")) {
+                        System.out.println("You didn't go back more pages.");
+                        break;
+                    }
+                }
+
+                break;
+            }
+
+
+            else if (r.equals("no") || r.equals("nn") || r.equals("n")) {
+                System.out.println("You didn't go back any page.");
+                System.out.printf("\nNumbers of page: %s", this.getCurrentPages());
+                break;
+            }
+
+
+            else {
+                System.out.print("\nERROR: Please, put a valid option: ");
+                sc.nextLine();
+            }
+        }
+
+        System.out.println("Page you is: "+this.getCurrentPages());
 
     }
+
 }
