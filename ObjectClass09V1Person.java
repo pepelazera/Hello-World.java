@@ -27,6 +27,9 @@ public class ObjectClass09V1Person {
         born = sc.next();
     }
 
+    public void doBirthday(){
+        this.setAge(this.getAge() + 1);
+    }
 
     public void birthday() {
         int B = 2025 - this.getAge();

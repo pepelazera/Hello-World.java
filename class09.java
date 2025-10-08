@@ -5,8 +5,9 @@ public class class09 {
         ObjectClass09V1Person o1 = new ObjectClass09V1Person();
         ObjectClass09V2Book o2 = new ObjectClass09V2Book();
 
-        //o1.bookReader();
-        //o1.details2();
+        o1.bookReader();
+        o1.details2();
+        o1.doBirthday();
 
         System.out.println("\n");
 
