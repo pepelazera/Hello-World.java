@@ -5,13 +5,15 @@ import java.util.Random;
 public class Object10_Student extends Object10_Person{
     Scanner sc = new Scanner(System.in);
     Random random = new Random();
-    Object10_Person Person = new Object10_Person();
 
+    
     // Attributes
     private int registration;
     private boolean registered;
     private String course;
 
+
+    // Methods
     public void Registration() {
         while (true) {
             System.out.print("Are you already enrolled in school ? ");
@@ -68,10 +70,29 @@ public class Object10_Student extends Object10_Person{
 
     }
 
-    // Methods
-    public void cancelRegistration() {
-        System.out.print("Do you want to cancel your registration ? ");
 
+    public void cancelRegistration() {
+        while (true) {
+            System.out.print("Do you want to cancel your registration ? ");
+            String ans = sc.next().toUpperCase();
+
+            if (ans.equals("YES") || ans.equals("YY") || ans.equals("Y")) {
+                this.setRegistered(false);
+
+                System.out.println("Your registration has been removed");
+                break;
+            }
+            else if (ans.equals("NO") || ans.equals("NN") || ans.equals("N")) {
+                this.setRegistered(true);
+
+                System.out.println("Great! You are still enrolled.");
+                break;
+            }
+            else {
+                System.out.println("ERROR: Please, answer with 'yes' or 'no': ");
+                continue;
+            }
+        }
     }
 
 
