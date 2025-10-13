@@ -6,7 +6,7 @@ public class Object10_Student extends Object10_Person{
     Scanner sc = new Scanner(System.in);
     Random random = new Random();
 
-    
+
     // Attributes
     private int registration;
     private boolean registered;
@@ -16,7 +16,7 @@ public class Object10_Student extends Object10_Person{
     // Methods
     public void Registration() {
         while (true) {
-            System.out.print("Are you already enrolled in school ? ");
+            System.out.print("Are you already enrolled in college ? ");
             String ans = sc.next().toUpperCase();
             int min = 100000;
             int max = 999999;
@@ -25,14 +25,26 @@ public class Object10_Student extends Object10_Person{
                 setRegistered(true);
                 this.setRegistration((random.nextInt(max - min + 1) + min));
 
-                System.out.println("You are already a student, great!");
-                System.out.println("Registration number: " + getRegistration());
-                System.out.println("Situation: " + this.getRegistered());
+                System.out.println("You are already a student, great!\n");
+
+                System.out.println("=== STATUS STUDENT ===");
+                System.out.println("Name: "+this.getName());
+                System.out.println("Age: "+this.getAge());
+                System.out.println("Gender: "+this.getGender());
+                System.out.println("\nRegistration number: "+this.getRegistration());
+                System.out.println("Enrolled: "+this.getRegistered());
+                System.out.println("Course: "+this.getCourse());
+
+                sc.close();
                 break;
 
             } else if (ans.equals("NO") || ans.equals("N") || ans.equals("NN")){
                 System.out.print("Do you want to enroll ? ");
                 String ans2 = sc.next().toUpperCase();
+
+                System.out.print("Wha course do you want to enroll ? ");
+                sc.nextLine();
+                this.setCourse(sc.nextLine());
 
                 if (ans2.equals("YES") || ans2.equals("YY") || ans2.equals("YS") || ans2.equals("Y")) {
                     this.setRegistration((random.nextInt(max - min + 1) + min));
@@ -42,12 +54,15 @@ public class Object10_Student extends Object10_Person{
                     this.setRegistered(true);
 
                     thePerson();
+
                     System.out.println("\n=== STATUS NEW STUDENT ===");
-                    System.out.println("Name: " + getName());
-                    System.out.println("Age: " + getAge());
-                    System.out.println("Gender: " + getGender());
-                    System.out.println("Registration number: " + this.getRegistration());
-                    System.out.println("Situation: " + this.getRegistered());
+                    System.out.println("Name: "+this.getName());
+                    System.out.println("Age: "+this.getAge());
+                    System.out.println("Gender: "+this.getGender());
+                    System.out.println("Registration number: "+this.getRegistration());
+                    System.out.println("Enrolled: "+this.getRegistered());
+                    System.out.println("Course: "+this.getCourse());
+
                     break;
 
                 } else if (ans2.equals("NO") || ans2.equals("N") || ans2.equals("NN")) {
@@ -57,16 +72,18 @@ public class Object10_Student extends Object10_Person{
 
                 }else {
                     System.out.println("ERROR: Please, answer with 'yes' or 'no'.");
-                    continue;
                 }
+
+                sc.close();
             }
 
             else {
                 System.out.println("ERROR: Please, answer with 'yes' or 'no'.");
-                continue;
             }
 
         }
+
+        sc.close();
 
     }
 
@@ -90,9 +107,12 @@ public class Object10_Student extends Object10_Person{
             }
             else {
                 System.out.println("ERROR: Please, answer with 'yes' or 'no': ");
-                continue;
+
             }
         }
+
+        sc.close();
+
     }
 
 
