@@ -1,6 +1,6 @@
 package aulasjavapoo;
 
-public class Pessoa {
+public abstract class Pessoa {
     // Atributos
     private String nome;
     private int idade;
@@ -8,7 +8,7 @@ public class Pessoa {
 
 
     // metodos
-    public void fazrAniv() {
+    public final void fazrAniv() {
         this.idade ++;
     }
 
