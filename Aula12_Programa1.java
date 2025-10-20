@@ -2,38 +2,20 @@ package aulasjavapoo;
 
 public class Aula12_Programa1 {
     public static void main(String[] args) {
-        Mamifero m = new Mamifero();
-        Reptil r = new Reptil();
-        Peixe p = new Peixe();
-        Ave a = new Ave();
+        Mamifero mamifero = new Mamifero();
+        Reptil reptil = new Reptil();
+        Peixe peixe = new Peixe();
+        Ave ave = new Ave();
+        Canguru canguru = new Canguru();
+        Cachorro cachorro = new Cachorro();
+        Cobra kai = new Cobra();
+        Tartaruga ninja = new Tartaruga();
+        GoldFish gold = new GoldFish();
+        Arara blue = new Arara();
+        SerHumano humano = new SerHumano();
 
-
-        // Mamifero
-        m.setPeso(85.2f);
-        m.setIdade(2);
-        m.setMembros(4);
-        m.locomover();
-        m.alimentar();
-        m.emitirSom();
-
-
-        // Peixe
-        p.setPeso(0.35f);
-        p.setIdade(1);
-        p.setMembros(3);
-        p.locomover();
-        p.alimentar();
-        p.emitirSom();
-        p.soltarBolha();
-
-
-        // Ave
-        a.setPeso(0.89f);
-        a.setIdade(2);
-        a.setMembros(4);
-        a.locomover();
-        a.alimentar();
-        a.emitirSom();
-        a.fazerNinho();
+       canguru.alimentar();
+       cachorro.alimentar();
+       humano.alimentar();
     }
 }
