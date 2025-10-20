@@ -1,0 +1,23 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+
+public class aula12 {
+    public static void main(String[] args){
+        List<Object> listaMista = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Nome: ");
+        String nome = sc.nextLine();
+
+
+        System.out.print("Idade: ");
+        int idade = sc.nextInt();
+
+        listaMista.add(nome);
+        listaMista.add(idade);
+
+        System.out.printf("Nome: %s, Idade: %s", nome, idade);
+    }
+}
