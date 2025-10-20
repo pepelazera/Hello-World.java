@@ -3,19 +3,22 @@ package aulasjavapoo;
 public class Aula12_Programa1 {
     public static void main(String[] args) {
         Mamifero mamifero = new Mamifero();
-        Reptil reptil = new Reptil();
-        Peixe peixe = new Peixe();
-        Ave ave = new Ave();
-        Canguru canguru = new Canguru();
         Cachorro cachorro = new Cachorro();
-        Cobra kai = new Cobra();
-        Tartaruga ninja = new Tartaruga();
-        GoldFish gold = new GoldFish();
-        Arara blue = new Arara();
-        SerHumano humano = new SerHumano();
+        Lobo lobo = new Lobo();
 
-       canguru.alimentar();
-       cachorro.alimentar();
-       humano.alimentar();
+        cachorro.reagir("toma a comida");
+        cachorro.reagir("Vai apanhar");
+        System.out.println();
+
+        cachorro.reagir(11, 45);
+        cachorro.reagir(21,0);
+        System.out.println();
+
+        cachorro.reagir(true);
+        cachorro.reagir(false);
+        System.out.println();
+
+        cachorro.reagir(2, 12.5f);
+        cachorro.reagir(17, 4.5f);
     }
 }
