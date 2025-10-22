@@ -36,7 +36,7 @@ public class Pessoa {
 
     }
 
-    
+
     public void status () {
         System.out.println("=== Informações da pessoa ===");
         System.out.println("Nome: "+this.getNome());
@@ -56,7 +56,6 @@ public class Pessoa {
 
         while (true) {
             if (experienciaExtra > 0) {
-                experienciaExtra++;
                 this.setExperiencia(getExperiencia() + experienciaExtra);
                 break;
             }
