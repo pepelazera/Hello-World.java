@@ -1,0 +1,6 @@
+public interface AcoesVideo {
+    public boolean play();
+    public boolean pause();
+    public int like();
+
+}
