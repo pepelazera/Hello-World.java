@@ -17,7 +17,6 @@ public class Gafanhoto extends Pessoa {
         while (true) {
 
             if (viuMaisUmV > 0) {
-                viuMaisUmV++;
                 this.setTotAssistido(this.getTotAssistido()+viuMaisUmV);
 
                 System.out.println("Total assistido: "+this.getTotAssistido());
