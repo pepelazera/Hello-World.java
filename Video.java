@@ -1,10 +1,53 @@
-public class Video {
+package ProjetoAula14;
+
+public class Video implements AcoesVideo {
 
     // Atributos
     private String titulo;
     private boolean avaliacao;
     private int views;
     private int curtidas;
+    private boolean reproduzir;
+
+
+    @Override
+    public void play() {
+
+    }
+
+    @Override
+    public void pause() {
+
+    }
+
+    @Override
+    public void like() {
+
+    }
+
+
+
+    public void infoVideos() {
+
+        String varAvaliacao;
+
+        if (this.getAvaliacao()) {
+            varAvaliacao = "Avaliação positiva.";
+        }
+
+        else {
+            varAvaliacao = "Avaliação negativa.";
+        }
+
+        System.out.println("=== Informações  do video ===");
+        System.out.println("Titulo do video: "+this.getTitulo());
+        System.out.println("Avaliação: "+varAvaliacao);
+        System.out.println("Views: "+this.getViews());
+        System.out.println("Likes: "+this.getCurtidas());
+        System.out.println("====================================");
+
+    }
+
 
 
     // Getters e Setters
@@ -16,7 +59,7 @@ public class Video {
     }
 
 
-    public boolean isAvaliacao() {
+    public boolean getAvaliacao() {
         return avaliacao;
     }
     public void setAvaliacao(boolean avaliacao) {
@@ -37,5 +80,13 @@ public class Video {
     }
     public void setCurtidas(int curtidas) {
         this.curtidas = curtidas;
+    }
+
+
+    public  boolean getReproduzir() {
+        return reproduzir;
+    }
+    public void setReproduzir(boolean reproduzir) {
+        this.reproduzir = reproduzir;
     }
 }

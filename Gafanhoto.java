@@ -1,3 +1,5 @@
+package ProjetoAula14;
+
 import java.util.Scanner;
 
 public class Gafanhoto extends Pessoa {
@@ -10,7 +12,7 @@ public class Gafanhoto extends Pessoa {
     public void viuMaisUm() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Quantos videos a mais voce viu ? ");
+        System.out.print("Quantos videos a mais voce viu ? ");
         int viuMaisUmV = sc.nextInt();
 
 
@@ -45,7 +47,7 @@ public class Gafanhoto extends Pessoa {
             String resp = sc.next().toLowerCase();
 
             if (resp.equals("sim") || resp.equals("ss") || resp.equals("s")) {
-                System.out.println("=== Cadastro Novo Gafanhoto ===");
+                System.out.println("=== Cadastro Novo ProjetoAula14.Gafanhoto ===");
 
                 System.out.print("Nome: ");
                 this.setNome(sc.nextLine());
@@ -54,11 +56,18 @@ public class Gafanhoto extends Pessoa {
                 System.out.print("Idade: ");
                 this.setIdade(sc.nextInt());
 
+                if (this.getIdade() < 6 ) {
+                    System.out.println("Impossivel programar sem nem ao menos saber ler");
+                    System.out.println("Programa finaizado.");
+                    break;
+                }
+
                 System.out.print("Sexo: ");
                 this.setSexo(sc.next());
 
-                System.out.print("Tempo de experiencia: ");
-                this.setExperiencia(sc.nextInt());
+
+                this.tempoExp();
+
 
                 System.out.println();
                 this.status();

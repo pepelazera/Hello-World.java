@@ -1,3 +1,5 @@
+package ProjetoAula14;
+
 import java.util.Scanner;
 
 public class Pessoa {
@@ -9,72 +11,49 @@ public class Pessoa {
 
 
     // Metodos
-    public void tempoExp() {
-        if (this.getExperiencia() <= 1) {
-            this.setClassificacao("Iniciante");
-            System.out.println("Nivel: "+this.getClassificacao());
-        }
-
-        else if (this.getExperiencia() < 3) {
-            this.setClassificacao("Intermediario");
-            System.out.println("Nivel: "+this.getClassificacao());
-        }
-
-        else if (this.getExperiencia() < 6) {
-            this.setClassificacao("Avancado");
-            System.out.println("Nivel: "+this.getClassificacao());
-        }
-
-        else if (this.getExperiencia() >= 6) {
-            this.setClassificacao("Avancado");
-            System.out.println("Nivel: "+this.getClassificacao());
-        }
-
-        else {
-            System.out.println("Nao sei exatamente aonde voce se classifica.");
-        }
-
-    }
-
-
     public void status () {
         System.out.println("=== Informações da pessoa ===");
         System.out.println("Nome: "+this.getNome());
-        System.out.println("Idade: "+this.getIdade());
+        System.out.println("Idade: "+this.getIdade()+" anos");
         System.out.println("Sexo: "+this.getSexo());
-        System.out.println("Tempo de experiencia: "+this.getExperiencia());
+        System.out.println("Tempo de experiencia: "+this.getExperiencia()+" anos");
         System.out.println("Categoria: "+this.getClassificacao());
     }
 
 
-    protected void ganharExp() {
+    public void tempoExp() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Quantos anos de experiencia voce quer acrescentar ? ");
-        int experienciaExtra = sc.nextInt();
-
-
         while (true) {
-            if (experienciaExtra > 0) {
-                this.setExperiencia(getExperiencia() + experienciaExtra);
+            System.out.print("Tempo de experiencia: ");
+            this.setExperiencia(sc.nextInt());
+
+
+            if (this.getExperiencia() > 0 && this.getExperiencia() < 3) {
+                this.setClassificacao("Junior");
                 break;
             }
 
-            else if (experienciaExtra == 0) {
-                experienciaExtra = getExperiencia();
-                System.out.println("Experiencia: "+experienciaExtra);
+            else if (this.getExperiencia() >= 4 && this.getExperiencia() < 6) {
+                this.setClassificacao("Pleno");
+                break;
+            }
+
+            else if (this.getExperiencia() >= 6) {
+                this.setClassificacao("Senior");
                 break;
             }
 
             else {
-                System.out.println("ERRO: Por favor, escreva novamente: ");
+                System.out.println("ERRO: Nao entendi, por favor, repita sua quantos anos de experiencia voce tem para eu poder continuarr:");
             }
-        }
 
-        sc.close();
+            sc.close();
+        }
     }
 
 
+    // Getters e Setters
     public String getNome() {
         return nome;
     }

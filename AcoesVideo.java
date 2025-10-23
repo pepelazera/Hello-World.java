@@ -1,6 +1,8 @@
+package ProjetoAula14;
+
 public interface AcoesVideo {
-    public boolean play();
-    public boolean pause();
-    public int like();
+    public void play();
+    public void pause();
+    public void like();
 
 }
