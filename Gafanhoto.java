@@ -1,5 +1,4 @@
 package ProjetoAula14;
-
 import java.util.Scanner;
 
 public class Gafanhoto extends Pessoa {
@@ -47,11 +46,12 @@ public class Gafanhoto extends Pessoa {
             String resp = sc.next().toLowerCase();
 
             if (resp.equals("sim") || resp.equals("ss") || resp.equals("s")) {
-                System.out.println("=== Cadastro Novo ProjetoAula14.Gafanhoto ===");
+                System.out.println("=== Cadastro Novo Gafanhoto ===");
 
                 System.out.print("Nome: ");
                 this.setNome(sc.nextLine());
                 this.setNome(sc.nextLine());
+
 
                 System.out.print("Idade: ");
                 this.setIdade(sc.nextInt());

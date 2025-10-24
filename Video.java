@@ -1,7 +1,6 @@
 package ProjetoAula14;
 
 public class Video implements AcoesVideo {
-
     // Atributos
     private String titulo;
     private boolean avaliacao;
@@ -26,22 +25,14 @@ public class Video implements AcoesVideo {
     }
 
 
-
     public void infoVideos() {
+        Visualizacao visu = new Visualizacao();
 
-        String varAvaliacao;
-
-        if (this.getAvaliacao()) {
-            varAvaliacao = "Avaliação positiva.";
-        }
-
-        else {
-            varAvaliacao = "Avaliação negativa.";
-        }
+        visu.avaliar();
 
         System.out.println("=== Informações  do video ===");
         System.out.println("Titulo do video: "+this.getTitulo());
-        System.out.println("Avaliação: "+varAvaliacao);
+        System.out.println("Avaliação: "+this.getAvaliacao());
         System.out.println("Views: "+this.getViews());
         System.out.println("Likes: "+this.getCurtidas());
         System.out.println("====================================");
