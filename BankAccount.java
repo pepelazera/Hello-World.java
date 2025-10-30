@@ -11,16 +11,11 @@ public class BankAccount {
     private float accountBalance;
     private float depositValue;
     private float withdrawValue;
+    private float taxSake;
     private boolean accountStatus;
 
 
     // Methods
-    public void increaseBalance() {
-
-
-    }
-
-
     public void AccountInitialized() {
         Scanner sc = new Scanner(System.in);
         Thread thread = new Thread();
@@ -120,15 +115,20 @@ public class BankAccount {
             }
 
             else if (ans == 4) {
+                this.setTaxSake(5f);
+
                 while (true) {
+                    System.out.printf("\nWe have U$ %s dollars of tax to withdraw.\n", this.getTaxSake());
+
                     System.out.print("Put how much do you want to withdraw: ");
-                    float sakeValue = sc.nextFloat();
+                    float sakeValue = sc.nextFloat()+this.getTaxSake();
 
                     if (sakeValue > this.getAccountBalance()) {
                         this.setAccountBalance(this.getAccountBalance()-sakeValue);
 
                         System.out.println("Your balance will be negative...");
                         System.out.printf("\nAccount balance now: U$ %s\n", this.getAccountBalance());
+
                         break;
                     }
 
@@ -224,10 +224,19 @@ public class BankAccount {
     }
 
 
+    public float getTaxSake() {
+        return taxSake;
+    }
+    public void setTaxSake(float taxSake) {
+        this.taxSake = taxSake;
+    }
+
+
     public boolean getAccountStatus() {
         return accountStatus;
     }
     public void setAccountStatus(boolean accountStatus) {
         this.accountStatus = accountStatus;
     }
+
 }
