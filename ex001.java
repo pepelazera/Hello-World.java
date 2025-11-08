@@ -8,18 +8,20 @@ public class ex001 {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
+        
         System.out.print("How many values do you will write ? ");
         int n = sc.nextInt();
 
         int[] vect = new int[n];
 
-
+        
         for (int i=0; i<vect.length; i++) {
 
             System.out.printf("\nWrite the %so. number: ", i+1);
             vect[i] += sc.nextInt();
         }
 
+        
         for (int i=0; i<vect.length; i++) {
 
             if (vect[i]<0) {
@@ -28,8 +30,7 @@ public class ex001 {
             }
         }
 
-
-
         sc.close();
     }
 }
+
