@@ -1,26 +1,26 @@
-package Aplication;
+package Entities;
 
 public class Employee {
 
-    private Integer Id;
+    private Integer id;
     private String name;
     private Double salary;
 
-    public Employee(){
+    public Employee() {
     }
 
     public Employee(Integer id, String name, Double salary) {
         super();
-        Id = id;
+        this.id = id;
         this.name = name;
         this.salary = salary;
     }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getName() {
@@ -38,12 +38,10 @@ public class Employee {
     }
 
     public void increaseSalary(double percentage) {
-        salary += (salary * percentage / 100.0);
+        salary += (salary * percentage) / 100.0;
     }
 
-    @Override
     public String toString() {
-        return Id + ", " + name + ", " + String.format("%.2f", salary);
+        return id + ", " + name + ", " + String.format("%.2f", salary);
     }
-
 }
