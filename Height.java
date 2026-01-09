@@ -1,73 +1,34 @@
-package ExerciseSection10;
-import java.util.Scanner;
+package Exercises;
 
 public class Height {
-    Scanner sc = new Scanner(System.in);
-    private String name;
-    private int age;
-    private float height;
-    private int n;
 
-    public void Average() {
-        System.out.print("How many people do you want to register ? ");
-        n = sc.nextInt();
+    public static void main(String[] args) {
+        double[] heights = {1.76, 1.85, 1.90, 1.72};
+        double bigger = heights[0];
+        double smaller = heights[0];
+        double[] reverses = new double[heights.length];
 
-        double avg = 0;
+        for (double height : heights) {
+            if (height > bigger) {
+                bigger = height;
+            }
 
-        for (int i=0; i<n; i++) {
-            System.out.print("Name: ");
-            sc.nextLine();
-            this.setName(sc.nextLine());
+            if (height < smaller) {
+                smaller = height;
+            }
+        }
 
-            System.out.print("Age: ");
-            this.setAge(sc.nextInt());
+        System.out.print("Reverse order: { ");
+        for (int i = heights.length - 1; i >= 0; i--) {
+            reverses[i] = heights[i];
 
-            System.out.print("Height: ");
-            this.setHeight(sc.nextFloat());
+            System.out.print(reverses[i] + " ");
+        }
+        System.out.println("}");
+
 
             System.out.println();
-
-            float[] heights = new float[(int) this.getHeight()];
-
-            for (int f = 0; f< heights.length; f++) {
-                avg += this.getHeight() / n;
-            }
-        }
-
-        int cont = 0;
-
-        for (int i=0; i<n; i++) {
-            if (this.age < 16) {
-                cont = cont + 1;
-            }
-        }
-
-        double porcent = cont * 100.0 / n;
-
-        System.out.printf("The average height is: %.2f", avg);
-        System.out.printf("\nPeople with less 16 years: %.1f%%", porcent);
-        System.out.println();
-    }
-
-    // Getters and Setters
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public float getHeight() {
-        return height;
-    }
-    public void setHeight(float height) {
-        this.height = height;
+            System.out.println("The bigger guy on the Array: " + bigger);
+            System.out.println("The smaller guy on the Array: " + smaller);
     }
 }
