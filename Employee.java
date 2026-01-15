@@ -1,5 +1,7 @@
 package Entities;
 
+import Aplications.EmployeesProgram;
+
 public class Employee {
 
     private Integer id;
@@ -10,7 +12,6 @@ public class Employee {
     }
 
     public Employee(Integer id, String name, Double salary) {
-        super();
         this.id = id;
         this.name = name;
         this.salary = salary;
@@ -37,11 +38,9 @@ public class Employee {
         this.salary = salary;
     }
 
-    public void increaseSalary(double percentage) {
-        salary += (salary * percentage) / 100.0;
-    }
-
+    @Override
     public String toString() {
-        return id + ", " + name + ", " + String.format("%.2f", salary);
+        return "\nId: " + id + "\nName: " + name
+                + "\nSalary: " + salary;
     }
 }
