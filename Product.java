@@ -1,40 +1,34 @@
-package Exercicios;
-import java.util.Scanner;
+package Entities;
+
+/*
+The New Scenario: Inventory Control Instead of complex employees, let's manage Products. The goal is to increase the price of a specific item in the inventory. Challenge requirements:
+    1. Product Class: Must have id (Integer), name (String), and price (Double). (okay)
+    2. Encapsulation: The price field must be private. Create a method increasePrice(double percentage) to change it. (okay)
+    3. The List: Create an ArrayList to store N products. (okay)
+    4. The Operation: Ask the user for an ID. If the ID exists in the list, apply a 10% increase. If it does not exist, warn: "ID not found". (okay)
+*/
 
 public class Product {
-    Scanner sc = new Scanner(System.in);
-    Main m = new Main();
 
-    private int code;
+    private Integer id;
     private String name;
-    private double price;
-    private int amount;
+    private Double price;
 
-    public void Constructor(int code, String name, double price, int amount) {
-        this.setCode(code);
-        this.setName(name);
-        this.setPrice(price);
-        this.setAmount(amount);
+    public Product() {
     }
 
-    public double ValueOnStock() {
-        return price * amount;
+    public Product(Integer id, String name, Double price) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.price = price;
     }
 
-    @Override
-    public String toString() {
-        return "Product: " +
-                "\ncode: " + code +
-                "\nname: " + name +
-                "\nprice: U$ " + price +
-                "\namount: " + amount;
+    public Integer getId() {
+        return id;
     }
-
-    public int getCode() {
-        return code;
-    }
-    public void setCode(int code) {
-        this.code = code;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -44,17 +38,21 @@ public class Product {
         this.name = name;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
-    public int getAmount() {
-        return amount;
+    public void increasePrice(Double percentage) {
+        price += (price * percentage) / 100.0;
     }
-    public void setAmount(int amount) {
-        this.amount = amount;
+
+    @Override
+    public String toString() {
+        return "Id: " + id +
+                "\nName: " + name +
+                "\nPrice: U$ " + String.format("%.2f", price);
     }
 }
