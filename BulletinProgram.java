@@ -1,13 +1,5 @@
 package Aplications;
 
-/*
-    Ler as notas de todos os alunos em todas as disciplinas pelo teclado (Scanner). (okay)
-    Calcular e mostrar:
-    A média de cada aluno (linha).
-    A média de cada disciplina (coluna).
-    A maior nota da matriz e em que posição ela está (aluno e disciplina).
-    Exibir a matriz de notas em formato de tabela, parecida com um boletim.
- */
 import java.util.Scanner;
 
 public class BulletinProgram {
@@ -48,3 +40,4 @@ public class BulletinProgram {
         sc.close();
     }
 }
+
