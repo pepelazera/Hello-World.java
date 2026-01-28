@@ -77,7 +77,7 @@ public class BulletinProgram {
                 if (wantedNumber == bigger) {
                     wantedNumber = bigger;
 
-                    System.out.printf("The biggest number (%s) was found in position: Line [%s] and Colum [%s] of the matrix", wantedNumber, (i+1), (j+1));
+                    System.out.printf("The biggest note (%s) was found in position: Line [%s] and Colum [%s] of the matrix", wantedNumber, (i+1), (j+1));
                 }
             }
         }
@@ -110,3 +110,4 @@ public class BulletinProgram {
         sc.close();
     }
 }
+
