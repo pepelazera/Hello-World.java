@@ -1,84 +1,70 @@
-package Entities;
+package Aplications;
 
+import Entities.Department;
+import Entities.HourContract;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Scanner;
+import Entities.Worker;
 import Entities.enums.WorkerLevel;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
+public class WorkerProgram {
 
-public class Worker {
+    public static void main(String[] args) throws ParseException {
 
-    private String name;
-    private WorkerLevel level;
-    private Double baseSalary;
+        Locale.setDefault(Locale.US);
+        Scanner sc = new Scanner(System.in);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-    private Department department;
-    private List<HourContract> contracts = new ArrayList<>();
+        System.out.print("Enter department's name: ");
+        String departmentName = sc.nextLine();
 
-    public Worker(String name, WorkerLevel level, Double baseSalary, Department department) {
-        this.name = name;
-        this.level = level;
-        this.baseSalary = baseSalary;
-        this.department = department;
-    }
+        System.out.println("Enter worker data: ");
+        System.out.print("Name: ");
+        String workerName = sc.nextLine();
 
-    public Worker() {
-    }
+        System.out.print("Level: ");
+        String workerLevel = sc.nextLine();
 
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
+        System.out.print("Base salary: ");
+        double baseSalary = sc.nextDouble();
 
-    public WorkerLevel getLevel() {
-        return level;
-    }
-    public void setLevel(WorkerLevel level) {
-        this.level = level;
-    }
+        Worker worker = new Worker(workerName, WorkerLevel.valueOf(workerLevel), baseSalary, new Department(departmentName));
 
-    public Double getBaseSalary() {
-        return baseSalary;
-    }
-    public void setBaseSalary(Double baseSalary) {
-        this.baseSalary = baseSalary;
-    }
+        System.out.print("How many contracts to this worker ? ");
+        int ct = sc.nextInt();
 
-    public Department getDepartment() {
-        return department;
-    }
-    public void setDepartment(Department department) {
-        this.department = department;
-    }
+        for (int i=1; i<=ct; i++) {
 
-    public List<HourContract> getContracts() {
-        return contracts;
-    }
+            System.out.printf("\nEnter the contract %s data: \n", i);
+            System.out.print("Date (DD/MM/YYYY): ");
+            Date dateContract = sdf.parse(sc.next());
 
-    public void addContract(HourContract contract) {
-        contracts.add(contract);
-    }
+            System.out.print("Value per hour: ");
+            double valuePerHour = sc.nextDouble();
 
-    public void removeContract(HourContract contract) {
-        contracts.remove(contract);
-    }
+            System.out.print("Duration (hours): ");
+            int hours = sc.nextInt();
 
-    public double income(int year, int month) {
-        double sum = baseSalary;
-        Calendar cal = Calendar.getInstance();
+            HourContract contract = new HourContract(dateContract, valuePerHour, hours);
+            worker.addContract(contract);
 
-        for (HourContract c : contracts) {
-            cal.setTime(c.getDate()); // Get the date of the contract and define this date to the date of the calendar
-
-            int c_year = cal.get(Calendar.YEAR);
-            int c_month = 1 + cal.get(Calendar.MONTH);
-            if (year == c_year && month == c_month) {
-                sum += c.totalValue();
-            }
         }
-        return sum;
-    }
 
+        System.out.println();
+        System.out.print("Enter the month and year to calculate income: ");
+        String monthAndYear = sc.next();
+
+        int month = Integer.parseInt(monthAndYear.substring(0, 2));
+        int year = Integer.parseInt(monthAndYear.substring(3));
+
+        System.out.println("Name: " + worker.getName());
+        System.out.println("Department: " + worker.getDepartment().getName());
+        System.out.println("Income for " + monthAndYear + ": " + String.format("%.2f", worker.income(month, year)));
+
+        sc.close();
+    }
 }
