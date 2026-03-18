@@ -1,44 +1,67 @@
-package Exercicios;
-import java.util.Scanner;
-import java.util.Locale;
+package AulaHeranca;
 
 public class Main {
-
     public static void main(String[] args) {
-        Locale.setDefault(Locale.US);
-        Scanner sc = new Scanner(System.in);
-        Product p = new Product();
 
-        int count = 0;
-        double total = 0.0;
-        int n;
+        // Criar ninja Sasuke Uchiha
+        Uzumaki naruto = new Uzumaki();
+        naruto.nome = "Naruto Uzumaki";
+        naruto.aldeia = "Vila da folha";
+        naruto.idade = 17;
 
-        System.out.print("How many foods do you want to put ? ");
-        n = sc.nextInt();
+        // Aplicando metodos ao meu primeiro ninja
+        System.out.println("\nInformacoes sobre o Naruto: ");
+        naruto.mostrarInfos();
+        naruto.ChakraInfinito();
+        System.out.println();
 
-        Product[] products = new Product[n];
+        int quantoTempoFaltaProNaruto = naruto.anosParaHokage(35);
+        System.out.printf("Voce tem %d anos. Faltam %d anos para voce poder ser Hokage\n", naruto.idade, quantoTempoFaltaProNaruto);
 
-        for(int i=0; i< products.length;i++) {
-            System.out.print("Product code: ");
-            p.setCode(sc.nextInt());
-            sc.nextLine();
 
-            System.out.print("Product name: ");
-            p.setName(sc.nextLine());
+        // Criar ninja Sasuke Uchiha
+        Uchiha sasuke = new Uchiha();
+        sasuke.nome = "Sasuke";
+        sasuke.aldeia = "Vila da folha";
+        sasuke.missao = "Encontrar membro da Anbu";
+        sasuke.nivelDaMissao = "A";
+        sasuke.StatusDaMissao = "Em andamento";
+        sasuke.idade = 18;
 
-            System.out.print("Product price: ");
-            p.setPrice(sc.nextDouble());
+        // Aplicando metodos ao meu segundo ninja
+        System.out.println("\nInformacoes sobre o Sasuke: ");
+        sasuke.mostrarInfos();
+        sasuke.SharinganAtivado();
+        System.out.println();
 
-            System.out.print("Product amount: ");
-            p.setAmount(sc.nextInt());
+        int quantoTempoFaltaProSasuke = sasuke.anosParaHokage(35);
+        System.out.printf("Voce tem %d anos. Faltam %d anos para voce poder ser Hokage\n",sasuke.idade, quantoTempoFaltaProSasuke);
 
-            System.out.println();
-            System.out.println(p.toString());
 
-            System.out.println();
-        }
+        // Criar Sakura Haruno
+        Haruno sakura = new Haruno();
+        sakura.nome = "Sakura Haruno";
+        sakura.aldeia = "Vila da Folha";
+        sakura.idade = 18;
 
-        System.out.printf("\nTotal price: U$ %.2f", p.ValueOnStock());
-        sc.close();
+        // Aplicando metodos ao meu terceiro ninja
+        System.out.println("\nInformacoes sobre a Sakura: ");
+        sakura.mostrarInfos();
+        sakura.CuraAprimorada();
+        System.out.println();
+
+
+        // Criar Hinata Hyuga
+        Hyuga hinata = new Hyuga();
+        hinata.nome = "Hinata Hyuga";
+        hinata.aldeia = "Vila da Folha";
+        hinata.idade = 18;
+
+        // Aplicando metodos ao meu quarto ninja
+        System.out.println("\nInformacoes sobre a Hinata: ");
+        hinata.mostrarInfos();
+        hinata.ByakuganAtivado();
+        System.out.println();
+
     }
 }
