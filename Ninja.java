@@ -1,14 +1,7 @@
-package Aulas;
+package Desafio4Java10x;
 
-public class Ninja {
+public interface Ninja {
 
-    String nome;
-    int aldeia;
-    int idade;
-
-    // Método geral
-    public void habilidadeEspecial() {
-        System.out.printf("\nMeu nome é %s. Esse é meu ataque base", nome);
-    }
-
+    void mostrarInformacoes();
+    void executarHabilidade();
 }
