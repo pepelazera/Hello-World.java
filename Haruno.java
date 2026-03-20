@@ -1,4 +1,4 @@
-package AulaHeranca;
+package AulaHeranca.exercicio;
 
 public class Haruno extends Ninja {
 

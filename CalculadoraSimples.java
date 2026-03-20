@@ -1,3 +1,5 @@
+package AulaHeranca.exercicio;
+
 public class CalculadoraSimples {
 
     double primeiroValor;

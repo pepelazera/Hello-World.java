@@ -1,20 +1,67 @@
-package Desafio4Java10x;
+package AulaHeranca.exercicio;
 
 public class Main {
     public static void main(String[] args) {
 
-        // Chamamento usando polimorfismo
-        Ninja naruto = new NinjaBasico("Naruto Uzumaki", 15, "Hasengan", TipoHabilidade.NINJUTSU);
-        Ninja kakashi = new NinjaAvancado("Kakashi Hatake", 27, "Chidori e Kamui", "Cópia e adaptação de Jutsus", TipoHabilidade.NINJUTSU);
-        // Nas duas chamadas, busquei fazer o desafio extra e fiz consultas sobre classe enum. Após entender um pouco sobre, vim aqui e acrescentei-as no código de uma maneira que não interferisse no que foi feito anteriormente
+        // Criar ninja Sasuke Uchiha
+        Uzumaki naruto = new Uzumaki();
+        naruto.nome = "Naruto Uzumaki";
+        naruto.aldeia = "Vila da folha";
+        naruto.idade = 17;
 
-        // Chama os metodos do ninja basico
-        naruto.mostrarInformacoes();
-        naruto.executarHabilidade();
+        // Aplicando metodos ao meu primeiro ninja
+        System.out.println("\nInformacoes sobre o Naruto: ");
+        naruto.mostrarInfos();
+        naruto.ChakraInfinito();
+        System.out.println();
 
-        // Chama os metodos do ninja avancado
-        kakashi.mostrarInformacoes();
-        kakashi.executarHabilidade();
+        int quantoTempoFaltaProNaruto = naruto.anosParaHokage(35);
+        System.out.printf("Voce tem %d anos. Faltam %d anos para voce poder ser Hokage\n", naruto.idade, quantoTempoFaltaProNaruto);
+
+
+        // Criar ninja Sasuke Uchiha
+        Uchiha sasuke = new Uchiha();
+        sasuke.nome = "Sasuke";
+        sasuke.aldeia = "Vila da folha";
+        sasuke.missao = "Encontrar membro da Anbu";
+        sasuke.nivelDaMissao = "A";
+        sasuke.StatusDaMissao = "Em andamento";
+        sasuke.idade = 18;
+
+        // Aplicando metodos ao meu segundo ninja
+        System.out.println("\nInformacoes sobre o Sasuke: ");
+        sasuke.mostrarInfos();
+        sasuke.SharinganAtivado();
+        System.out.println();
+
+        int quantoTempoFaltaProSasuke = sasuke.anosParaHokage(35);
+        System.out.printf("Voce tem %d anos. Faltam %d anos para voce poder ser Hokage\n",sasuke.idade, quantoTempoFaltaProSasuke);
+
+
+        // Criar Sakura Haruno
+        Haruno sakura = new Haruno();
+        sakura.nome = "Sakura Haruno";
+        sakura.aldeia = "Vila da Folha";
+        sakura.idade = 18;
+
+        // Aplicando metodos ao meu terceiro ninja
+        System.out.println("\nInformacoes sobre a Sakura: ");
+        sakura.mostrarInfos();
+        sakura.CuraAprimorada();
+        System.out.println();
+
+
+        // Criar Hinata Hyuga
+        Hyuga hinata = new Hyuga();
+        hinata.nome = "Hinata Hyuga";
+        hinata.aldeia = "Vila da Folha";
+        hinata.idade = 18;
+
+        // Aplicando metodos ao meu quarto ninja
+        System.out.println("\nInformacoes sobre a Hinata: ");
+        hinata.mostrarInfos();
+        hinata.ByakuganAtivado();
+        System.out.println();
 
     }
 }
