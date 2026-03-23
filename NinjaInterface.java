@@ -1,8 +1,8 @@
-package AulaPolimorfismo;
+package Aulas;
 
 public interface NinjaInterface {
+
     // Tudo é automaticamente FINAL na ‘interface’
 
-    public void tacarUmaShuriken();
-
+    void habilidadeEspecial();
 }

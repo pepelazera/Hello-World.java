@@ -1,36 +1,26 @@
-package AulaHeranca.exercicio;
+package Aulas;
 
 public class MainAula {
-    public static void main(String[] args) {
+    static void main() {
 
-        Uzumaki naruto = new Uzumaki();
-        Uchiha sasuke = new Uchiha();
-        Haruno sakura = new Haruno();
-        Hyuga hinata = new Hyuga();
-        Boruto boruto = new Boruto();
-
-        // Objeto 1
+        Uzumaki2 naruto = new Uzumaki2();
         naruto.nome = "Naruto Uzumaki";
-        naruto.aldeia = "Vila da folha";
-        naruto.claNinja = "Clã Uzumaki";
+        naruto.ataqueEspecial = "Hasen Shuriken";
         naruto.idade = 32;
-        naruto.missao = "Recuperar pergaminho";
-        naruto.nivelDaMissao = "B";
-        naruto.StatusDaMissao = "Em andamento";
+        naruto.habilidadeEspecial();
 
-        // Metodos
-        naruto.mostrarInfos();
         System.out.println();
 
-        // Boruto
-        boruto.nome = "Boruto Hyuga Uzumaki";
-        boruto.aldeia = "Boruto é um Renegado, por isso não pertence a nenhuma aldeia.";
-        boruto.idade = 15;
+        Uchiha2 sasuke = new Uchiha2();
+        sasuke.nome = "Sasuke Uchiha";
+        sasuke.idade = 33;
+        sasuke.ataqueEspecial = "Amaterasu";
+        sasuke.habilidadeEspecial();
 
-        // Métodos
         System.out.println();
-        boruto.mostrarInfos();
-        boruto.modoSennin();
+
+        Uchiha2 itachi = new Uchiha2("Itachi Uchiha", "Renegado", 27, "Amaterasu");
+        itachi.habilidadeEspecial();
 
     }
 }
