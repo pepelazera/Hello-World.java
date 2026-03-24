@@ -1,19 +1,24 @@
-package AulaHeranca.exercicio;
+package AulasHeranca;
 
 public class Hyuga extends Ninja {
 
-    public void ByakuganAtivado() {
-        System.out.printf("Meu nome eh %s. Sou um membro do cla Hyuga. Ativando meu Byakugan", nome);
+    String ataqueEspecial;
+
+    public Hyuga() {
+        super();
     }
 
-    public void mostrarInfos() {
-        System.out.println("Nome: " + nome);
-        System.out.println("Aldeia: " + aldeia);
-        System.out.println("Idade: " + idade);
-        System.out.println("Missao: " + missao);
-        System.out.println("Nivel da missao: " + nivelDaMissao);
-        System.out.println("Status da missao: " + StatusDaMissao);
-        System.out.printf("Por se tratar de um membro do clã Hyuga, %s é um portador do Byakugan", nome);
+    public Hyuga(String nome, String aldeia, int idade, String ataqueEspecial) {
+        super(nome, aldeia, idade, ataqueEspecial);
+        this.habilidadeEspecial();
+    }
+
+    public void byakuganAtivado() {
+        System.out.printf("Meu nome é %s. Sou um Hyuga, por isso possuo um byakugan\n", nome);
+    }
+
+    public void habilidadeEspecial() {
+        System.out.printf("Esse é meu ataque especial: %s", ataqueEspecial);
     }
 
 }

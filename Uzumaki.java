@@ -1,22 +1,23 @@
-package AulaHeranca.exercicio;
+package AulasHeranca;
 
 public class Uzumaki extends Ninja {
 
-    public void ChakraInfinito() {
-        System.out.printf("%s é um membro do clã Uzumaki, por isso ele tem chakra quase que infinito", nome);
+    String ataqueEspecial;
+
+    public Uzumaki() {
+        super();
     }
 
-    public void modoSennin() {
-        System.out.println("\nAtivando o modo Sennin...");
+    public Uzumaki(String nome, String aldeia, int idade, String ataqueEspecial) {
+        super(nome, aldeia, idade, ataqueEspecial);
+        this.habilidadeEspecial();
     }
 
-    public void mostrarInfos() {
-        System.out.println("Nome: " + nome);
-        System.out.println("Aldeia: " + aldeia);
-        System.out.println("Idade: " + idade);
-        System.out.println("Missao: " + missao);
-        System.out.println("Nivel da missao: " + nivelDaMissao);
-        System.out.println("Status da missao: " + StatusDaMissao);
-        System.out.printf("Por se tratar de um membro do clã Uzumaki, %s tem chakra quase infinito", nome);
+    public void chakraInfinito() {
+        System.out.printf("Meu nome é %s. Sou um Uzumaki, por isso tenho um chakra quase infinito\n", nome);
+    }
+
+    public void habilidadeEspecial() {
+        System.out.printf("Esse é meu ataque especial: %s", ataqueEspecial);
     }
 }

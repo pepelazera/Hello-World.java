@@ -1,18 +1,31 @@
-package AulaHeranca.exercicio;
+package AulasHeranca;
 
-public class Uchiha extends Ninja {
+import Aulas.NivelNinja;
 
-    public void SharinganAtivado() {
-        System.out.printf("%s é um membro do cla Uchiha", nome);
+public class Uchiha extends Ninja implements SharinganInterface {
+
+    String ataqueEspecial;
+
+    public Uchiha() {
+        super();
     }
 
-    public void mostrarInfos() {
-        System.out.println("Nome: " + nome);
-        System.out.println("Aldeia: " + aldeia);
-        System.out.println("Idade: " + idade);
-        System.out.println("Missao: " + missao);
-        System.out.println("Nivel da missao: " + nivelDaMissao);
-        System.out.println("Status da missao: " + StatusDaMissao);
-        System.out.printf("Por se tratar de um membro do clã Uchiha, %s é um portador do sharingan", nome);
+    public Uchiha(String nome, String aldeia, int idade, String ataqueEspecial) {
+        super(nome, aldeia, idade, ataqueEspecial);
+        this.habilidadeEspecial();
+    }
+
+    public Uchiha(String nome, String aldeia, int idade, String ataqueEspecial, int numeroMissoesConcluidas, NivelNinja rank) {
+        super(nome, aldeia, idade, ataqueEspecial, numeroMissoesConcluidas, rank);
+        this.habilidadeEspecial();
+    }
+
+    public void habilidadeEspecial() {
+        System.out.printf("Esse é meu ataque especial: %s", ataqueEspecial);
+    }
+
+    @Override
+    public void SharinganAtivado() {
+        System.out.printf("Nome do usuário: %s - Sharingan ativado\n", nome);
     }
 }

@@ -1,19 +1,24 @@
-package AulaHeranca.exercicio;
+package AulasHeranca;
 
 public class Haruno extends Ninja {
 
-    public void CuraAprimorada() {
-        System.out.printf("Sou a %s. Gracas ao meu cla, tenho uma cura aprimorada", nome);
+    String ataqueEspecial;
+
+    public Haruno() {
+        super();
     }
 
-    public void mostrarInfos() {
-        System.out.println("Nome: " + nome);
-        System.out.println("Aldeia: " + aldeia);
-        System.out.println("Idade: " + idade);
-        System.out.println("Missao: " + missao);
-        System.out.println("Nivel da missao: " + nivelDaMissao);
-        System.out.println("Status da missao: " + StatusDaMissao);
-        System.out.printf("Por se tratar de um membro do clã Haruno, %s tem uma habilidade de cura mais avançada", nome);
+    public Haruno(String nome, String aldeia, int idade, String ataqueEspecial) {
+        super(nome, aldeia, idade, ataqueEspecial);
+        this.habilidadeEspecial();
+    }
+
+    public void curaAcimaDoNormal() {
+        System.out.printf("Meu nome é %s. Sou um Haruno, por isso possuo uma cura acima do normal\n", nome);
+    }
+
+    public void habilidadeEspecial() {
+        System.out.printf("Esse é meu ataque especial: %s", ataqueEspecial);
     }
 
 }

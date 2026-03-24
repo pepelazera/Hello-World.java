@@ -1,45 +1,43 @@
-package AulaHeranca.exercicio;
+package AulasHeranca;
 
-public class Ninja {
+import Aulas.NivelNinja;
 
-    // Temos dois tipos de metodos: void e return
+public abstract class Ninja {
+
+    //TODO: Incluir 2 novos atributos: numMissoesConcluidas, rank
+    // TODO: Rank: Gennin, Chunnin, Jounnin, Hokage
 
     String nome;
     String aldeia;
-    String claNinja;
     int idade;
-    String missao;
-    String StatusDaMissao;
-    String nivelDaMissao;
+    String ataqueEspecial;
+    int numMissoesConcluidas;
+    NivelNinja rank;
+
+    public Ninja() {
+    }
+
+    public Ninja(String nome, String aldeia, int idade, String ataqueEspecial) {
+        this.nome = nome;
+        this.aldeia = aldeia;
+        this.idade = idade;
+        this.ataqueEspecial = ataqueEspecial;
+    }
+
+    //TODO: Sobrecarga do construtor chamando os novos atributos
+
+    // Nas sobrecargas de métodos, você não precisa redeclarar o construtor, somente os novos atributos
+    public Ninja(String nome, String aldeia, int idade, String ataqueEspecial, int numMissoesConcluidas, NivelNinja rank) {
+        this(nome, aldeia, idade, ataqueEspecial); // Referencio o construtor antigo usando o this e colocando os antigos parâmetros
+        this.numMissoesConcluidas = numMissoesConcluidas;
+        this.rank = rank;
+    }
 
 
-    /*
-        Quando eu utilizo um metodo vazio (void), eu não preciso do return no final desse mesmo,
-        pois como eu passei um tipo vazio, não tenho que retornar nenhum parametro tambem.
-        Além disso, o parenteses eh o que faz o Java identificar o metodo. Sem isso, o que eu estou escrevendo não significaria nada
-     */
-
-    // Metodo geral. Todos os ninjas vao ter
-
-
-    // Criar um metodo publico personalizado
-    public void mostrarInfos() {
-        System.out.println("Informações sobre o Ninja: ");
+    public void MostrarInfos() {
         System.out.println("Nome: " + nome);
-        System.out.println("Aldeia: " + aldeia);
-        System.out.println("Clã: " + claNinja);
-        System.out.println("Idade: " + idade);
-        System.out.println("Missao: " + missao);
-        System.out.println("Nivel da missao: " + nivelDaMissao);
-        System.out.println("Status da missao: " + StatusDaMissao);
-    }
-
-    public String euSouUmNinja() {
-        return "Oi, bom dia. Eu sou um ninja";
-    }
-
-    public int anosParaHokage(int idadeMinimaHokage) {
-        return idadeMinimaHokage - idade;
+        System.out.println("Aldeia : " + aldeia);
+        System.out.println("Idade: "+idade);
     }
 
 }
