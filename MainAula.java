@@ -25,11 +25,18 @@ public class MainAula {
 
         System.out.println();
 
-        Hatake kakashi = new Hatake("Kakashi Hatake","Vila da folha", 48, "Mangekyou Sharingan - Kamui" );
+        Hatake kakashi = new Hatake("Kakashi Hatake","Vila da folha", 48, "Mangekyou Sharingan - Kamui", 265, NivelNinja.JOUNIN);
         kakashi.MostrarInfos();
         kakashi.SharinganAtivado();
         kakashi.MembroDaAnbu();
         kakashi.HokageAtivo();
+
+        System.out.println();
+
+        // Obj uchiha 3
+        Uchiha2 madara = new Uchiha2("Madara Uchiha", "Vila da folha", 86, "Rinngegan", 900, NivelNinja.KAGE);
+        madara.HabilidadeEspecial();
+        madara.MostrarInfos();
 
     }
 }

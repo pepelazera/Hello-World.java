@@ -10,6 +10,10 @@ public class Hatake extends NinjaAula2 implements SharinganInterface, AnbuInterf
         super(nome, aldeia, idade, ataqueEspecial);
     }
 
+    public Hatake(String nome, String aldeia, int idade, String ataqueEspecial, int numeroDeMissoes,NivelNinja rank){
+        super(nome, aldeia, idade, ataqueEspecial, numeroDeMissoes, rank);
+    }
+
     @Override
     public void SharinganAtivado() {
         System.out.printf("%s é um portador do Sharingan, mas não é um Uchiha\n", nome);
@@ -22,6 +26,6 @@ public class Hatake extends NinjaAula2 implements SharinganInterface, AnbuInterf
 
     @Override
     public void HokageAtivo() {
-        System.out.printf("%s é o Hokage atual, o 6° hokage", nome);
+        System.out.printf("%s é o Hokage atual, o 6° hokage\n", nome);
     }
 }

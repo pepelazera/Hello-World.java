@@ -3,10 +3,16 @@ package AulaHerancaMultipla;
 public class Uchiha2 extends NinjaAula2 implements NinjaInterface, SharinganInterface {
 
     public Uchiha2() {
+        super();
     }
 
+    //TODO: Método existente: primeiro método
     public Uchiha2(String nome, String aldeia, int idade, String ataqueEspecial) {
         super(nome, aldeia, idade, ataqueEspecial);
+    }
+
+    public Uchiha2(String nome, String aldeia, int idade, String ataqueEspecial, int numeroDeMissoes, NivelNinja rank) {
+        super(nome, aldeia, idade, ataqueEspecial, numeroDeMissoes, rank);
     }
 
     @Override

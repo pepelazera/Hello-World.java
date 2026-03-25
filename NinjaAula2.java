@@ -8,10 +8,14 @@ public abstract class NinjaAula2 implements NinjaInterface {
     String aldeia;
     int idade;
     String ataqueEspecial;
+    //TODO: Incluir dois novos atributos: numeroDeMissoes, Rank
+    int numeroDeMissoes;
+    NivelNinja rank;
 
     public NinjaAula2() {
     }
 
+    //TODO: Método existente: primeiro método
     public NinjaAula2(String nome, String aldeia, int idade, String ataqueEspecial) {
         this.nome = nome;
         this.aldeia = aldeia;
@@ -19,11 +23,21 @@ public abstract class NinjaAula2 implements NinjaInterface {
         this.ataqueEspecial = ataqueEspecial;
     }
 
+    //TODO: Sobrecarga do construtor chamando os novos atributos
+    // Você não precisa redeclarar o construtor, somente os novos atributos
+    public NinjaAula2(String nome, String aldeia, int idade, String ataqueEspecial, int numeroDeMissoes, NivelNinja rank) {
+        this(nome,aldeia, idade, ataqueEspecial);
+        this.numeroDeMissoes = numeroDeMissoes;
+        this.rank = rank;
+    }
+
     public void MostrarInfos() {
         System.out.println("Nome: "+nome);
         System.out.println("Aldeia: "+aldeia);
         System.out.println("Idade: "+idade);
         System.out.println("Ataque especial: "+ataqueEspecial);
+        System.out.println("Numero de missões: "+numeroDeMissoes);
+        System.out.println("Ranks: "+rank);
     }
 
     // Metodos abstratos
