@@ -1,4 +1,4 @@
-package Aulas;
+package AulaHerancaMultipla;
 
 public class MainAula {
     static void main() {
@@ -7,7 +7,7 @@ public class MainAula {
         naruto.nome = "Naruto Uzumaki";
         naruto.ataqueEspecial = "Hasen Shuriken";
         naruto.idade = 32;
-        naruto.habilidadeEspecial();
+        naruto.HabilidadeEspecial();
 
         System.out.println();
 
@@ -15,12 +15,21 @@ public class MainAula {
         sasuke.nome = "Sasuke Uchiha";
         sasuke.idade = 33;
         sasuke.ataqueEspecial = "Amaterasu";
-        sasuke.habilidadeEspecial();
+        sasuke.SharinganAtivado();
+        sasuke.HabilidadeEspecial();
 
         System.out.println();
 
         Uchiha2 itachi = new Uchiha2("Itachi Uchiha", "Renegado", 27, "Amaterasu");
-        itachi.habilidadeEspecial();
+        itachi.HabilidadeEspecial();
+
+        System.out.println();
+
+        Hatake kakashi = new Hatake("Kakashi Hatake","Vila da folha", 48, "Mangekyou Sharingan - Kamui" );
+        kakashi.MostrarInfos();
+        kakashi.SharinganAtivado();
+        kakashi.MembroDaAnbu();
+        kakashi.HokageAtivo();
 
     }
 }

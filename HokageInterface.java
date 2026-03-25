@@ -1,7 +1,6 @@
-package AulasHeranca;
+package AulaHerancaMultipla;
 
 public interface HokageInterface {
 
     void HokageAtivo();
-
 }

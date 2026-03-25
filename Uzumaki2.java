@@ -1,4 +1,4 @@
-package Aulas;
+package AulaHerancaMultipla;
 
 public class Uzumaki2 extends NinjaAula2 implements NinjaInterface {
 
@@ -10,7 +10,7 @@ public class Uzumaki2 extends NinjaAula2 implements NinjaInterface {
     }
 
     @Override
-    public void habilidadeEspecial() {
+    public void HabilidadeEspecial() {
         System.out.printf("Meu nome é %s. Esse é meu ataque especial: %s\n", nome, ataqueEspecial);
     }
 

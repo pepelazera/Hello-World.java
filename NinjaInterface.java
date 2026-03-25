@@ -1,8 +1,8 @@
-package Aulas;
+package AulaHerancaMultipla;
 
 public interface NinjaInterface {
 
     // Tudo é automaticamente FINAL na ‘interface’
 
-    void habilidadeEspecial();
+    void HabilidadeEspecial();
 }
