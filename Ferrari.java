@@ -1,25 +1,35 @@
-package AulasJava10x;
+package Exercicios;
 
-public class Ferrari extends CarrosAltoDesempenho {
+public class Ferrari extends Carro implements CarroAltaPerformance, F1mode {
 
-    boolean f1Mode;
+    double cronometro0a100;
+    double cronometro0a200;
 
-    public void infosDocarro() {
-        super.infosDocarro();
+    public Ferrari() {
+        super();
+    }
 
-        System.out.println("Modelo: " + modeloDoCarro);
-        System.out.println("Ano do carro: " + anoDoCarro);
-        System.out.println("Esta ligado ? " + estaLigadoOuDesligado);
-        System.out.println("Motor: " + motor);
-        System.out.println("Preço: U$ " + preco);
-        System.out.println("Tem o modo f1 ? " + f1Mode);
-        tempo0a100();
-        tempo0a200();
+    public Ferrari(String modeloDoCarro, int anoDoCarro, boolean estaLigadoOuDesligado, double motor, double preco,
+                   boolean acelerador, boolean freio, boolean painelDeMidia, double cronometro0a100, double cronometro0a200) {
 
-        System.out.println();
-        System.out.println("Acelerador funcionando ? " + acelerador);
-        System.out.println("Freio funcionando ? " + freio);
-        painelDeMida();
+        super(modeloDoCarro, anoDoCarro, estaLigadoOuDesligado, motor, preco, acelerador, freio, painelDeMidia);
+        this.cronometro0a100 = cronometro0a100;
+        this.cronometro0a200 = cronometro0a200;
+    }
+
+    @Override
+    public void tempo0a100() {
+        System.out.printf("%s tem seu 0 a 100 em %.2f segundos\n", modeloDoCarro, cronometro0a100);
+    }
+
+    @Override
+    public void tempo0a200() {
+        System.out.printf("%s tem seu 0 a 100 em %.2f segundos\n", modeloDoCarro, cronometro0a200);
+    }
+
+    @Override
+    public void f1modeFerrari() {
+        System.out.printf("%s vem com o F1 mode, pois é um carro da Ferrari", modeloDoCarro);
     }
 
 }
