@@ -1,5 +1,11 @@
 package Desafio05;
 
+/*
+    Crie uma classe abstrata chamada
+    ContaBancaria que implementa a interface
+    Conta
+ */
+
 public abstract class ContaBancaria implements Conta {
 
     double saldo;
@@ -24,5 +30,9 @@ public abstract class ContaBancaria implements Conta {
         System.out.printf("\nSaldo atual: %.2f", saldo);
 
         return 0;
+    }
+
+    public void infosConta() {
+        System.out.printf("\nSaldo total: %.2f", saldo);
     }
 }
