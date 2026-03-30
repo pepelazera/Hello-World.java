@@ -1,13 +1,17 @@
 package Desafio05;
 
-import java.util.Scanner;
-
 public class MainContaBancaria {
-    public static void main(String[] args) {
-        Scanner ct = new Scanner(System.in);
+    static void main() {
 
+        ContaCorrente contaCorrente = new ContaCorrente();
+        contaCorrente.saldo = 350.00;
+        contaCorrente.depositarValor(50);
 
+        System.out.println();
 
-        ct.close();
+        ContaPoupanca contaPoupanca = new ContaPoupanca();
+        contaPoupanca.saldo = 250.00;
+        contaPoupanca.depositarValor(70);
+
     }
 }
