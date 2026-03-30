@@ -1,21 +1,18 @@
 package Desafio05;
 
+/*
+    Crie uma classe chamada ContaCorrente que
+    estende a classe ContaBancaria
+ */
+
 public class ContaCorrente extends ContaBancaria {
 
     public ContaCorrente() {
     }
 
-    public ContaCorrente(double saldo) {
-        super(saldo);
-    }
-
     @Override
     public void consultarSaldo() {
         super.consultarSaldo();
-    }
-
-    @Override
-    public void depositarValor() {
     }
 
     @Override
